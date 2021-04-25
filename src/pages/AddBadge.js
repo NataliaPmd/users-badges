@@ -54,7 +54,7 @@ class AddBadge extends Component {
           <img
             className="img-fluid BadgeNew__hero-img"
             src={header}
-            alt="Logo"
+            alt="Logo1"
           />
           <h1>Join us!</h1>
         </div>
