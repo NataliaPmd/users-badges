@@ -1,4 +1,4 @@
-const BASE_URL = "https://team-members-list.herokuapp.com/api";
+const BASE_URL = "https://team-members-list.herokuapp.com";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -24,25 +24,25 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      return callApi("/badges");
+      return callApi("/apiBadges");
     },
     create(badge) {
-      return callApi(`/badges`, {
+      return callApi(`/apiBadges`, {
         method: "POST",
         body: JSON.stringify(badge),
       });
     },
     read(badgeId) {
-      return callApi(`/badges/${badgeId}`);
+      return callApi(`/apiBadges/${badgeId}`);
     },
     update(badgeId, updates) {
-      return callApi(`/badges/${badgeId}`, {
+      return callApi(`/apiBadges/${badgeId}`, {
         method: "PUT",
         body: JSON.stringify(updates),
       });
     },
     remove(badgeId) {
-      return callApi(`/badges/${badgeId}`, {
+      return callApi(`/apiBadges/${badgeId}`, {
         method: "DELETE",
       });
     },
