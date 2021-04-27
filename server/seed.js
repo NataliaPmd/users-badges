@@ -3,6 +3,17 @@ const path = require('path');
 const faker = require('faker');
 const md5 = require('md5');
 
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 3000;
+
+server.use(middlewares);
+server.use(router);
+
+server.listen(port);
+
 function createBadges(limit = 5) {
   const result = [];
 
@@ -37,3 +48,4 @@ function main() {
 }
 
 main();
+
